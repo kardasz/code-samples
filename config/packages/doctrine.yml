@@ -1,0 +1,4 @@
+doctrine:
+    dbal:
+        types:
+            label_collection: Kardasz\Doctrine\Type\LabelCollectionDoctrineType

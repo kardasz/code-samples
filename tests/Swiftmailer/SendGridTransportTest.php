@@ -17,7 +17,7 @@ use Swift_Message;
 
 /**
  * Class SendGridTransportTest
- * @package Tests
+ * @package Kardasz\Swiftmailer\Tests
  */
 class SendGridTransportTest extends TestCase
 {
