@@ -1,0 +1,12 @@
+old_sound_rabbit_mq:
+    producers:
+        async_event:
+            connection:       default
+            exchange_options: { name: 'async_event', type: direct }
+    consumers:
+        async_event:
+            connection:       default
+            exchange_options: { name: 'async_event', type: direct }
+            queue_options:    { name: 'async_event'}
+            callback:         Kardasz\Event\AsyncEventConsumer
+            enable_logger: true
