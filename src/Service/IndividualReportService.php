@@ -33,8 +33,10 @@ class IndividualReportService
      * @param AsyncEventDispatcherInterface $eventDispatcher
      * @param RegistryInterface $registry
      */
-    public function __construct(AsyncEventDispatcherInterface $eventDispatcher, RegistryInterface $registry)
-    {
+    public function __construct(
+        AsyncEventDispatcherInterface $eventDispatcher,
+        RegistryInterface $registry
+    ) {
         $this->eventDispatcher = $eventDispatcher;
         $this->registry = $registry;
     }

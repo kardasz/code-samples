@@ -1,0 +1,7 @@
+services:
+    _defaults:
+        public: false
+        autowire: true
+        autoconfigure: true
+
+    Kardasz\Twig\Extension\DataTables\DataTablesTwigExtension: ~

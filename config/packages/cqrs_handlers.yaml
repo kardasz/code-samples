@@ -1,0 +1,4 @@
+services:
+    Kardasz\CQRS\Handler\CreateReportCommandHandler:
+      tags:
+        - { name: broadway.command_handler }

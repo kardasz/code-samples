@@ -7,17 +7,19 @@
 
 namespace Kardasz\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use DateTime;
 
 /**
- * Class IndividualReport
+ * Class ReportCategory
  * @package Kardasz\Entity
  *
- * @ORM\Table(name="individual_report")
+ * @ORM\Table(name="report_category")
  * @ORM\Entity
  */
-class IndividualReport
+class ReportCategory
 {
     /**
      * @var \Ramsey\Uuid\UuidInterface
@@ -30,11 +32,10 @@ class IndividualReport
     private $id;
 
     /**
-     * @var ReportCategory
-     * @ORM\ManyToOne(targetEntity="Kardasz\Entity\ReportCategory", inversedBy="reports")
-     * @ORM\JoinColumn(name="category_id", referencedColumnName="id", nullable=true, onDelete="SET NULL")
+     * @var Collection
+     * @ORM\OneToMany(targetEntity="Kardasz\Entity\IndividualReport", mappedBy="category")
      */
-    private $category;
+    private $reports;
 
     /**
      * @var string|null
@@ -44,15 +45,9 @@ class IndividualReport
 
     /**
      * @var string|null
-     * @ORM\Column(name="author", type="string", nullable=false)
+     * @ORM\Column(name="name", type="string", nullable=false, unique=true)
      */
-    private $author;
-
-    /**
-     * @var string|null
-     * @ORM\Column(name="file_path", type="string", nullable=true)
-     */
-    private $filePath;
+    private $status;
 
     /**
      * @var DateTime
@@ -65,6 +60,17 @@ class IndividualReport
      * @ORM\Column(name="updated_at", type="datetime")
      */
     private $updatedAt;
+
+    const STATUS_DRAFT = 'draft';
+    const STATUS_ACTIVE = 'active';
+
+    /**
+     * ReportCategory constructor.
+     */
+    public function __construct()
+    {
+        $this->reports = new ArrayCollection();
+    }
 
     /**
      * @return mixed
@@ -83,19 +89,40 @@ class IndividualReport
     }
 
     /**
-     * @return ReportCategory
+     * @return Collection
      */
-    public function getCategory(): ReportCategory
+    public function getReports(): Collection
     {
-        return $this->category;
+        return $this->reports;
     }
 
     /**
-     * @param ReportCategory $category
+     * @param Collection $reports
      */
-    public function setCategory(ReportCategory $category): void
+    public function setReports(Collection $reports): void
     {
-        $this->category = $category;
+        $this->reports = $reports;
+    }
+
+    /**
+     * @param IndividualReport $report
+     */
+    public function addReport(IndividualReport $report)
+    {
+        if (!$this->reports->contains($report)) {
+            $this->reports->add($report);
+            $report->setCategory($this);
+        }
+    }
+
+    /**
+     * @param IndividualReport $report
+     */
+    public function removeReport(IndividualReport $report)
+    {
+        if (!$this->reports->contains($report)) {
+            $this->reports->removeElement($report);
+        }
     }
 
     /**
@@ -117,33 +144,17 @@ class IndividualReport
     /**
      * @return null|string
      */
-    public function getAuthor(): ?string
+    public function getStatus(): ? string
     {
-        return $this->author;
+        return $this->status;
     }
 
     /**
-     * @param null|string $author
+     * @param string $status
      */
-    public function setAuthor(string $author): void
+    public function setStatus(string $status): void
     {
-        $this->author = $author;
-    }
-
-    /**
-     * @return null|string
-     */
-    public function getFilePath(): ?string
-    {
-        return $this->filePath;
-    }
-
-    /**
-     * @param string $filePath
-     */
-    public function setFilePath(string $filePath): void
-    {
-        $this->filePath = $filePath;
+        $this->status = $status;
     }
 
     /**

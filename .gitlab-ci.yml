@@ -1,0 +1,79 @@
+stages:
+  - build
+  - test
+  - release
+  - deploy
+
+image: docker:latest
+services:
+  - docker:dind
+
+variables:
+  DOCKER_IMAGE: registry.gitlab.com/kardasz/code-samples
+
+cache:
+  untracked: true
+  paths:
+    - vendor/
+    - node_modules/
+
+build:composer:
+  stage: build
+  image: composer
+  script:
+    - composer -n --no-ansi --no-scripts --ignore-platform-reqs install
+  artifacts:
+    paths:
+      - vendor/
+  only:
+    - tags
+
+test:
+  stage: test
+  image: php:7.2-cli
+  script:
+    - vendor/phpunit/phpunit/phpunit
+  dependencies:
+    - build:composer
+  only:
+    - tags
+
+release:
+  stage: release
+  script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
+    - docker build -t $DOCKER_IMAGE:$CI_COMMIT_REF_NAME .
+    - docker tag $DOCKER_IMAGE:$CI_COMMIT_REF_NAME $DOCKER_IMAGE:latest
+    - docker push $DOCKER_IMAGE:$CI_COMMIT_REF_NAME
+    - docker push $DOCKER_IMAGE:latest
+  dependencies:
+    - build:composer
+  only:
+    - tags
+
+production:
+ stage: deploy
+ image: ubuntu
+ script:
+   - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+   - eval $(ssh-agent -s)
+   - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+   - mkdir -p ~/.ssh
+   - chmod 700 ~/.ssh
+   - echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+   - chmod 644 ~/.ssh/known_hosts
+   - ssh $SERVER docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
+   - ssh $SERVER docker pull $DOCKER_IMAGE:latest
+   - ssh $SERVER docker-compose up -d --force-recreate --remove-orphans
+ only:
+   - tags
+ when: manual
+
+rancher:
+  stage: deploy
+  image: cdrx/rancher-gitlab-deploy
+  script:
+    - upgrade --stack kardasz --service app --new-image $DOCKER_IMAGE:$CI_COMMIT_REF_NAME --upgrade-timeout 1200 --finish-upgrade
+  only:
+    - tags
+  when: manual

@@ -1,0 +1,19 @@
+parameters:
+    locale: 'en'
+    env(PUBLIC_DIR): '%kernel.project_dir%/public'
+    env(UPLOAD_DIR): uploads
+    env(UPLOAD_PATH): '%env(PUBLIC_DIR)%/%env(UPLOAD_DIR)%'
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    Kardasz\:
+        resource: '../src/*'
+        exclude: '../src/{Entity,Event,Migrations,Twig,Tests,Kernel.php}'
+
+    Kardasz\Controller\:
+        resource: '../src/Controller'
+        tags: ['controller.service_arguments']
