@@ -1,17 +1,16 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\VO;
 
 use DateTime;
 
 /**
- * Class FillingVO
- * @package Kardasz\VO
+ * Class FillingVO.
  */
 class FillingVO
 {
@@ -26,9 +25,10 @@ class FillingVO
 
     /**
      * FillingVO constructor.
+     *
      * @param int|DateTime $date
-     * @param float|null $value
-     * @param float|null $distance
+     * @param float|null   $value
+     * @param float|null   $distance
      */
     public function __construct(?DateTime $date, ?float $value, ?float $distance)
     {

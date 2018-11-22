@@ -1,17 +1,16 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Service\Map\ObjectSummary\Visitor;
 
 use Kardasz\DTO\MapObjectSummaryDTO;
 
 /**
- * Class Id
- * @package Kardasz\Service\Map\ObjectSummary\Visitor
+ * Class Id.
  */
 class Id implements VisitorInterface
 {
@@ -21,6 +20,6 @@ class Id implements VisitorInterface
      */
     public function visit(MapObjectSummaryDTO $dto, ?array $data = null): void
     {
-        $dto->setId((isset($data['object_id'])) ? (int)$data['object_id'] : null);
+        $dto->setId((isset($data['object_id'])) ? (int) $data['object_id'] : null);
     }
 }

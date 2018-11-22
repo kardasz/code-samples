@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Controller;
 
 use Kardasz\DTO\ApiProblem;
@@ -15,16 +15,16 @@ use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\Validator\ConstraintViolationListInterface;
 
 /**
- * Trait ControllerTrait
- * @package Kardasz\Controller
+ * Trait ControllerTrait.
  */
 trait ControllerTrait
 {
     /**
      * @param FormInterface $form
+     *
      * @return array
      */
-    protected function getFormErrors(FormInterface $form) : array
+    protected function getFormErrors(FormInterface $form): array
     {
         $errors = [];
 
@@ -39,14 +39,16 @@ trait ControllerTrait
                 }
             }
         }
+
         return $errors;
     }
 
     /**
      * @param ConstraintViolationListInterface $violationList
+     *
      * @return array
      */
-    protected function getViolationErrors(ConstraintViolationListInterface $violationList) : array
+    protected function getViolationErrors(ConstraintViolationListInterface $violationList): array
     {
         $errors = [];
         foreach ($violationList as $violation) {
@@ -58,17 +60,18 @@ trait ControllerTrait
 
     /**
      * @param FormInterface $form
-     * @param int $status
-     * @param array $headers
+     * @param int           $status
+     * @param array         $headers
+     *
      * @return JsonResponse
      */
-    protected function createInvalidFormResponse(FormInterface $form, $status = 422, array $headers = []) : JsonResponse
+    protected function createInvalidFormResponse(FormInterface $form, $status = 422, array $headers = []): JsonResponse
     {
         return new JsonResponse(
             new ApiProblem([
                 'title' => 'Validation error',
                 'errors' => $this->getFormErrors($form),
-                'status' => $status
+                'status' => $status,
             ]),
             $status,
             $headers
@@ -77,17 +80,18 @@ trait ControllerTrait
 
     /**
      * @param ConstraintViolationListInterface $violationList
-     * @param int $status
-     * @param array $headers
+     * @param int                              $status
+     * @param array                            $headers
+     *
      * @return JsonResponse
      */
-    protected function createViolationResponse(ConstraintViolationListInterface $violationList, $status = 422, array $headers = []) : JsonResponse
+    protected function createViolationResponse(ConstraintViolationListInterface $violationList, $status = 422, array $headers = []): JsonResponse
     {
         return new JsonResponse(
             new ApiProblem([
                 'title' => 'Validation error',
                 'errors' => $this->getViolationErrors($violationList),
-                'status' => $status
+                'status' => $status,
             ]),
             $status,
             $headers
@@ -96,11 +100,12 @@ trait ControllerTrait
 
     /**
      * @param array $data
-     * @param int $status
+     * @param int   $status
      * @param array $headers
+     *
      * @return JsonResponse
      */
-    protected function createApiProblemResponse(array $data, $status = 400, array $headers = []) : JsonResponse
+    protected function createApiProblemResponse(array $data, $status = 400, array $headers = []): JsonResponse
     {
         return new JsonResponse(
             new ApiProblem($data),
@@ -111,7 +116,9 @@ trait ControllerTrait
 
     /**
      * @param Request $request
+     *
      * @return mixed
+     *
      * @throws BadRequestHttpException
      */
     protected function getJson(Request $request)

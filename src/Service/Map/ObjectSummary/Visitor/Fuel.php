@@ -1,17 +1,16 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Service\Map\ObjectSummary\Visitor;
 
 use Kardasz\DTO\MapObjectSummaryDTO;
 
 /**
- * Class Fuel
- * @package Kardasz\Service\Map\ObjectSummary\Visitor
+ * Class Fuel.
  */
 class Fuel implements VisitorInterface
 {
@@ -21,6 +20,6 @@ class Fuel implements VisitorInterface
      */
     public function visit(MapObjectSummaryDTO $dto, ?array $data = null): void
     {
-        $dto->setFuel((isset($data['object_fuel'])) ? (float)$data['object_fuel'] : null);
+        $dto->setFuel((isset($data['object_fuel'])) ? (float) $data['object_fuel'] : null);
     }
 }

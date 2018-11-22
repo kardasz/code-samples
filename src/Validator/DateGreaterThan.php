@@ -1,17 +1,17 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Validator;
 
 use Symfony\Component\Validator\Constraint;
 
 /**
- * Class DateGreaterThan
- * @package Kardasz\Validator
+ * Class DateGreaterThan.
+ *
  * @Annotation
  */
 class DateGreaterThan extends Constraint
@@ -27,7 +27,7 @@ class DateGreaterThan extends Constraint
     public $message = 'Date must be greater than';
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function validatedBy()
     {
@@ -35,7 +35,7 @@ class DateGreaterThan extends Constraint
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getTargets()
     {

@@ -1,24 +1,23 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Service\Map\ObjectSummary\Visitor;
 
 use Psr\Container\ContainerInterface;
 
 /**
- * Class VisitorChainFactory
- * @package Kardasz\Service\Map\ObjectSummary\Visitor
+ * Class VisitorChainFactory.
  */
 class VisitorChainFactory implements VisitorChainFactoryInterface
 {
     /**
      * {@inheritdoc}
      */
-    public function create(ContainerInterface $container) : VisitorChainInterface
+    public function create(ContainerInterface $container): VisitorChainInterface
     {
         $visitorChain = new VisitorChain();
 

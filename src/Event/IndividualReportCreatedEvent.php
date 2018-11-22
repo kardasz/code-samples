@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Event;
 
 use Kardasz\AMQP\Message\MessageInterface;
@@ -12,8 +12,7 @@ use Symfony\Component\EventDispatcher\Event;
 use InvalidArgumentException;
 
 /**
- * Class IndividualReportCreatedEvent
- * @package Kardasz\Event
+ * Class IndividualReportCreatedEvent.
  */
 class IndividualReportCreatedEvent extends Event implements AsyncEventInterface
 {
@@ -26,13 +25,13 @@ class IndividualReportCreatedEvent extends Event implements AsyncEventInterface
 
     /**
      * IndividualReportCreatedEvent constructor.
+     *
      * @param string $reportId
      */
     public function __construct(string $reportId)
     {
         $this->reportId = $reportId;
     }
-
 
     /**
      * @return string
@@ -56,12 +55,13 @@ class IndividualReportCreatedEvent extends Event implements AsyncEventInterface
     public function serialize(): array
     {
         return [
-            'reportId' => $this->reportId
+            'reportId' => $this->reportId,
         ];
     }
 
     /**
      * @param array $data
+     *
      * @return MessageInterface
      */
     public static function deserialize(array $data): MessageInterface

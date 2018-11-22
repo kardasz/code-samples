@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Controller;
 
 use Broadway\CommandHandling\CommandBus;
@@ -17,8 +17,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * Class IndividualReportController
- * @package Kardasz\Controller
+ * Class IndividualReportController.
  */
 class IndividualReportController extends Controller
 {
@@ -26,7 +25,9 @@ class IndividualReportController extends Controller
 
     /**
      * @Route("/api/individual-reports", name="api_individual_reports_create", methods={"POST"})
+     *
      * @param Request $request
+     *
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function createAction(Request $request, CommandBus $commandBus)

@@ -1,17 +1,16 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Service\Map\ObjectDetails\Visitor;
 
 use Kardasz\DTO\MapObjectDetailsDTO;
 
 /**
- * Class Distance
- * @package Kardasz\Service\Map\ObjectDetails\Visitor
+ * Class Distance.
  */
 class Distance implements VisitorInterface
 {
@@ -22,7 +21,7 @@ class Distance implements VisitorInterface
     public function visit(MapObjectDetailsDTO $dto, ?array $data = null): void
     {
         if (!empty($data['summary']['distance'])) {
-            $dto->setDistance((float)$data['summary']['distance']);
+            $dto->setDistance((float) $data['summary']['distance']);
         }
     }
 }

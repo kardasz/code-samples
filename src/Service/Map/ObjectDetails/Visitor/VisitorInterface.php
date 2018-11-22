@@ -1,17 +1,16 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Service\Map\ObjectDetails\Visitor;
 
 use Kardasz\DTO\MapObjectDetailsDTO;
 
 /**
- * Interface VisitorInterface
- * @package Kardasz\Service\Map\ObjectDetails\Visitor
+ * Interface VisitorInterface.
  */
 interface VisitorInterface
 {

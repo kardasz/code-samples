@@ -1,28 +1,27 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Event;
 
 use Kardasz\AMQP\Message\MessageInterface;
 use Symfony\Component\EventDispatcher\Event;
 
 /**
- * Interface AsyncEventInterface
- * @package Kardasz\AMQP\Message
+ * Interface AsyncEventInterface.
  */
 interface AsyncEventInterface extends MessageInterface
 {
     /**
      * @return string
      */
-    public function getEventName() : string;
+    public function getEventName(): string;
 
     /**
      * @return Event
      */
-    public function getEvent() : Event;
+    public function getEvent(): Event;
 }

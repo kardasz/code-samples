@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Tests\Service\Map\ObjectDetails\Visitor;
 
 use DateTime;
@@ -15,14 +15,13 @@ use Kardasz\VO\FillingVO;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class FillingsTest
- * @package Kardasz\Tests\Service\Map\ObjectDetails\Visitor
+ * Class FillingsTest.
  */
 class FillingsTest extends TestCase
 {
     /**
      * @dataProvider dataProvider
-     * @covers       Fillings::visit
+     * @covers       \Fillings::visit
      *
      * @param array      $expected
      * @param array|null $data
@@ -39,6 +38,7 @@ class FillingsTest extends TestCase
 
     /**
      * @return array
+     *
      * @throws Exception
      */
     public function dataProvider(): array
@@ -50,17 +50,17 @@ class FillingsTest extends TestCase
                         new DateTime('2018-10-01 08:15:00'),
                         42,
                         620
-                    )
+                    ),
                 ],
                 [
                     'fillings' => [
                         [
                             'filling_timestamp' => strtotime('2018-10-01 08:15:00'),
                             'filling_value' => 42,
-                            'filling_distance' => 620
-                        ]
-                    ]
-                ]
+                            'filling_distance' => 620,
+                        ],
+                    ],
+                ],
             ],
             [
                 [
@@ -73,24 +73,23 @@ class FillingsTest extends TestCase
                         new DateTime('2018-10-13 19:13:12'),
                         42,
                         525
-                    )
+                    ),
                 ],
                 [
                     'fillings' => [
                         [
                             'filling_timestamp' => strtotime('2018-10-12 09:23:00'),
                             'filling_value' => 23,
-                            'filling_distance' => 321
+                            'filling_distance' => 321,
                         ],
                         [
                             'filling_timestamp' => strtotime('2018-10-13 19:13:12'),
                             'filling_value' => 42,
-                            'filling_distance' => 525
-                        ]
-                    ]
-                ]
+                            'filling_distance' => 525,
+                        ],
+                    ],
+                ],
             ],
-
         ];
     }
 }

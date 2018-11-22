@@ -1,17 +1,16 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Event;
 
 use Symfony\Component\EventDispatcher\Event;
 
 /**
- * Class AsyncEventWrapper
- * @package Kardasz\Event
+ * Class AsyncEventWrapper.
  */
 class AsyncEventWrapper extends Event
 {
@@ -24,6 +23,7 @@ class AsyncEventWrapper extends Event
 
     /**
      * AsyncEventWrapper constructor.
+     *
      * @param AsyncEventInterface $event
      */
     public function __construct(AsyncEventInterface $event)

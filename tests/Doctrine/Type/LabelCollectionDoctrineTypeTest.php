@@ -1,6 +1,7 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
@@ -13,8 +14,8 @@ use PHPUnit\Framework\TestCase;
 use Doctrine\DBAL\Types\Type;
 
 /**
- * Class LabelCollectionDoctrineTypeTest
- * @package Kardasz\Tests\Doctrine\Type
+ * Class LabelCollectionDoctrineTypeTest.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  */
 class LabelCollectionDoctrineTypeTest extends TestCase

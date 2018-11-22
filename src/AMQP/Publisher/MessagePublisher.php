@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\AMQP\Publisher;
 
 use Kardasz\AMQP\Message\MessageInterface;
@@ -12,8 +12,7 @@ use Kardasz\AMQP\Serializer\MessageSerializerInterface;
 use OldSound\RabbitMqBundle\RabbitMq\ProducerInterface;
 
 /**
- * Class MessagePublisher
- * @package Kardasz\AMQP\Publisher
+ * Class MessagePublisher.
  */
 class MessagePublisher implements MessagePublisherInterface
 {
@@ -29,7 +28,8 @@ class MessagePublisher implements MessagePublisherInterface
 
     /**
      * MessagePublisher constructor.
-     * @param ProducerInterface $producer
+     *
+     * @param ProducerInterface          $producer
      * @param MessageSerializerInterface $serializer
      */
     public function __construct(ProducerInterface $producer, MessageSerializerInterface $serializer)

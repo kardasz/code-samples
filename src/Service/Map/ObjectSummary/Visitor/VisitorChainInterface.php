@@ -1,15 +1,14 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Service\Map\ObjectSummary\Visitor;
 
 /**
- * Interface VisitorChainInterface
- * @package Kardasz\Service\Map\ObjectSummary\Visitor
+ * Interface VisitorChainInterface.
  */
 interface VisitorChainInterface extends VisitorInterface
 {

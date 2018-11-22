@@ -1,18 +1,17 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use DateTime;
 
 /**
- * Class IndividualReport
- * @package Kardasz\Entity
+ * Class IndividualReport.
  *
  * @ORM\Table(name="individual_report")
  * @ORM\Entity

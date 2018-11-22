@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Tests\Service\Map\ObjectDetails\Visitor;
 
 use Kardasz\DTO\MapObjectDetailsDTO;
@@ -12,14 +12,13 @@ use Kardasz\Service\Map\ObjectDetails\Visitor\Odometer;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class OdometerTest
- * @package Kardasz\Tests\Service\Map\ObjectDetails\Visitor
+ * Class OdometerTest.
  */
 class OdometerTest extends TestCase
 {
     /**
      * @dataProvider dataProvider
-     * @covers       Odometer::visit
+     * @covers       \Odometer::visit
      *
      * @param int|null   $expected
      * @param array|null $data
@@ -44,41 +43,40 @@ class OdometerTest extends TestCase
                 789,
                 [
                     'summary' => [
-                        'last_odo' => 789
-                    ]
-                ]
+                        'last_odo' => 789,
+                    ],
+                ],
             ],
             [
                 2341,
                 [
                     'summary' => [
-                        'last_odo' => 2341
-                    ]
-                ]
+                        'last_odo' => 2341,
+                    ],
+                ],
             ],
             [
                 null,
                 [
                     'summary' => [
-                        'last_odo' => null
-                    ]
-                ]
+                        'last_odo' => null,
+                    ],
+                ],
             ],
             [
                 null,
                 [
-                    'summary' => []
-                ]
+                    'summary' => [],
+                ],
             ],
             [
                 0,
                 [
                     'summary' => [
-                        'last_odo' => 'abc'
-                    ]
-                ]
+                        'last_odo' => 'abc',
+                    ],
+                ],
             ],
-
         ];
     }
 }

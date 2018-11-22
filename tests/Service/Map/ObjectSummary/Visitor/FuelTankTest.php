@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Tests\Service\Map\ObjectSummary\Visitor;
 
 use Kardasz\DTO\MapObjectSummaryDTO;
@@ -12,14 +12,13 @@ use Kardasz\Service\Map\ObjectSummary\Visitor\FuelTank;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class FuelTankTest
- * @package Kardasz\Tests\Service\Map\ObjectSummary\Visitor
+ * Class FuelTankTest.
  */
 class FuelTankTest extends TestCase
 {
     /**
      * @dataProvider dataProvider
-     * @covers       FuelTank::visit
+     * @covers       \FuelTank::visit
      *
      * @param float|null $expected
      * @param array|null $data
@@ -43,37 +42,37 @@ class FuelTankTest extends TestCase
                 37,
                 [
                     'fuel_tank_1' => 12.5,
-                    'fuel_tank_2' => 24.5
-                ]
+                    'fuel_tank_2' => 24.5,
+                ],
             ],
             [
                 42.5,
                 [
                     'fuel_tank_1' => 42.5,
-                    'fuel_tank_2' => 0
-                ]
+                    'fuel_tank_2' => 0,
+                ],
             ],
             [
                 32.1,
                 [
                     'fuel_tank_1' => 0,
-                    'fuel_tank_2' => 32.1
-                ]
+                    'fuel_tank_2' => 32.1,
+                ],
             ],
             [
                 null,
                 [
                     'fuel_tank_1' => null,
-                    'fuel_tank_2' => null
-                ]
+                    'fuel_tank_2' => null,
+                ],
             ],
             [
                 null,
-                []
+                [],
             ],
             [
                 null,
-                null
+                null,
             ],
         ];
     }

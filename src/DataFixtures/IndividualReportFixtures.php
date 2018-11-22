@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\DataFixtures;
 
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
@@ -15,8 +15,7 @@ use Kardasz\Entity\IndividualReport;
 use DateTime;
 
 /**
- * Class IndividualReportFixtures
- * @package Kardasz\DataFixtures
+ * Class IndividualReportFixtures.
  */
 class IndividualReportFixtures extends Fixture implements DependentFixtureInterface
 {
@@ -29,7 +28,7 @@ class IndividualReportFixtures extends Fixture implements DependentFixtureInterf
         self::REPORT_3_ID,
         self::REPORT_4_ID,
         self::REPORT_5_ID,
-        self::REPORT_6_ID
+        self::REPORT_6_ID,
     ];
 
     const REPORT_1_ID = '0c58b7eb-6d28-4ef7-be47-34e911af9f42';
@@ -38,7 +37,7 @@ class IndividualReportFixtures extends Fixture implements DependentFixtureInterf
     const REPORT_4_ID = '0b0ae34d-ec85-4cd9-85f6-c40d0a2f0bd1';
     const REPORT_5_ID = '24ba65b5-9ee9-49b4-a7df-34fb18850ce3';
     const REPORT_6_ID = 'e93ffb88-f417-44bd-b41c-4ba5bb5598e7';
-    
+
     /**
      * CategoryFixtures constructor.
      */
@@ -48,7 +47,7 @@ class IndividualReportFixtures extends Fixture implements DependentFixtureInterf
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function load(ObjectManager $manager)
     {
@@ -74,7 +73,7 @@ class IndividualReportFixtures extends Fixture implements DependentFixtureInterf
     public function getDependencies()
     {
         return [
-            ReportCategoryFixtures::class
+            ReportCategoryFixtures::class,
         ];
     }
 }

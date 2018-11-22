@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Tests\Service\Map\ObjectSummary\Visitor;
 
 use Kardasz\DTO\MapObjectSummaryDTO;
@@ -12,14 +12,13 @@ use Kardasz\Service\Map\ObjectSummary\Visitor\Geo;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class GeoTest
- * @package Kardasz\Tests\Service\Map\ObjectSummary\Visitor
+ * Class GeoTest.
  */
 class GeoTest extends TestCase
 {
     /**
      * @dataProvider dataProvider
-     * @covers       Geo::visit
+     * @covers       \Geo::visit
      *
      * @param float|null $expectedLat
      * @param float|null $expectedLng
@@ -48,8 +47,8 @@ class GeoTest extends TestCase
                     'last_record' => [
                         'record_gps_latitude' => 52.411537,
                         'record_gps_longitude' => 16.936883,
-                    ]
-                ]
+                    ],
+                ],
             ],
             [
                 52.581537,
@@ -57,8 +56,8 @@ class GeoTest extends TestCase
                 [
                     'last_record' => [
                         'record_gps_latitude' => 52.581537,
-                    ]
-                ]
+                    ],
+                ],
             ],
             [
                 null,
@@ -66,8 +65,8 @@ class GeoTest extends TestCase
                 [
                     'last_record' => [
                         'record_gps_longitude' => 16.776883,
-                    ]
-                ]
+                    ],
+                ],
             ],
             [
                 null,
@@ -76,18 +75,18 @@ class GeoTest extends TestCase
                     'last_record' => [
                         'record_gps_latitude' => null,
                         'record_gps_longitude' => null,
-                    ]
-                ]
+                    ],
+                ],
             ],
             [
                 null,
                 null,
-                []
+                [],
             ],
             [
                 null,
                 null,
-                null
+                null,
             ],
         ];
     }

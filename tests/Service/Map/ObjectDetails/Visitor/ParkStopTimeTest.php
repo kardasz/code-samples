@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Tests\Service\Map\ObjectDetails\Visitor;
 
 use Kardasz\DTO\MapObjectDetailsDTO;
@@ -12,14 +12,13 @@ use Kardasz\Service\Map\ObjectDetails\Visitor\ParkStopTime;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class ParkStopTimeTest
- * @package Kardasz\Tests\Service\Map\ObjectDetails\Visitor
+ * Class ParkStopTimeTest.
  */
 class ParkStopTimeTest extends TestCase
 {
     /**
      * @dataProvider dataProvider
-     * @covers       ParkStopTime::visit
+     * @covers       \ParkStopTime::visit
      *
      * @param int|null   $expectedTime
      * @param int|null   $expectedHours
@@ -50,9 +49,9 @@ class ParkStopTimeTest extends TestCase
                 45,
                 [
                     'summary' => [
-                        'parkstop' => 3600 + (60 * 45) + 12
-                    ]
-                ]
+                        'parkstop' => 3600 + (60 * 45) + 12,
+                    ],
+                ],
             ],
             [
                 (3 * 3600) + (60 * 21) + 12,
@@ -60,9 +59,9 @@ class ParkStopTimeTest extends TestCase
                 21,
                 [
                     'summary' => [
-                        'parkstop' => (3 * 3600) + (60 * 21) + 12
-                    ]
-                ]
+                        'parkstop' => (3 * 3600) + (60 * 21) + 12,
+                    ],
+                ],
             ],
             [
                 null,
@@ -70,17 +69,17 @@ class ParkStopTimeTest extends TestCase
                 0,
                 [
                     'summary' => [
-                        'parkstop' => null
-                    ]
-                ]
+                        'parkstop' => null,
+                    ],
+                ],
             ],
             [
                 null,
                 0,
                 0,
                 [
-                    'summary' => []
-                ]
+                    'summary' => [],
+                ],
             ],
             [
                 0,
@@ -88,11 +87,10 @@ class ParkStopTimeTest extends TestCase
                 0,
                 [
                     'summary' => [
-                        'parkstop' => 'abc'
-                    ]
-                ]
+                        'parkstop' => 'abc',
+                    ],
+                ],
             ],
-
         ];
     }
 }

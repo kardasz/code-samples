@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Tests\Service\Map\ObjectDetails\Visitor;
 
 use Kardasz\DTO\MapObjectDetailsDTO;
@@ -13,14 +13,13 @@ use Kardasz\VO\AcVO;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class AcTest
- * @package Kardasz\Tests\Service\Map\ObjectDetails\Visitor
+ * Class AcTest.
  */
 class AcTest extends TestCase
 {
     /**
      * @dataProvider dataProvider
-     * @covers       Ac::visit
+     * @covers       \Ac::visit
      *
      * @param array      $expected
      * @param array|null $data
@@ -49,10 +48,10 @@ class AcTest extends TestCase
                         'record_io' => [
                             'analog' => [
                                 [12, 'foo'],
-                            ]
-                        ]
-                    ]
-                ]
+                            ],
+                        ],
+                    ],
+                ],
             ],
             [
                 [
@@ -63,31 +62,30 @@ class AcTest extends TestCase
                         'record_io' => [
                             'analog' => [
                                 [44, 'baz'],
-                            ]
-                        ]
-                    ]
-                ]
+                            ],
+                        ],
+                    ],
+                ],
             ],
             [
                 [
                     new AcVO('foo', 4, AcVO::TYPE_ANALOG),
                     new AcVO('baaz', 3, AcVO::TYPE_ANALOG),
-                    new AcVO('bar', 45, AcVO::TYPE_TEMP)
+                    new AcVO('bar', 45, AcVO::TYPE_TEMP),
                 ],
                 [
                     'lastrec' => [
                         'record_io' => [
                             'analog' => [
                                 [4, 'foo'],
-                                [3, 'baaz']
+                                [3, 'baaz'],
                             ],
                             'temp' => [
-                                [45, 'bar']
-                            ]
-                        ]
-                    ]
-                ]
-
+                                [45, 'bar'],
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ];
     }

@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Tests\Service\Map\ObjectSummary\Visitor;
 
 use Kardasz\DTO\MapObjectSummaryDTO;
@@ -12,14 +12,13 @@ use Kardasz\Service\Map\ObjectSummary\Visitor\GsmSignalLevelTytan;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class GsmSignalLevelTytanTest
- * @package Kardasz\Tests\Service\Map\ObjectSummary\Visitor
+ * Class GsmSignalLevelTytanTest.
  */
 class GsmSignalLevelTytanTest extends TestCase
 {
     /**
      * @dataProvider dataProvider
-     * @covers       GsmSignalLevelTytan::visit
+     * @covers       \GsmSignalLevelTytan::visit
      *
      * @param int|null   $expected
      * @param array|null $data
@@ -45,9 +44,9 @@ class GsmSignalLevelTytanTest extends TestCase
                     'last_record' => [
                         'record_additional_data' => [
                             'GsmSignalLevel' => 16,
-                        ]
-                    ]
-                ]
+                        ],
+                    ],
+                ],
             ],
             [
                 100,
@@ -55,9 +54,9 @@ class GsmSignalLevelTytanTest extends TestCase
                     'last_record' => [
                         'record_additional_data' => [
                             'GsmSignalLevel' => 32,
-                        ]
-                    ]
-                ]
+                        ],
+                    ],
+                ],
             ],
             [
                 0,
@@ -65,25 +64,25 @@ class GsmSignalLevelTytanTest extends TestCase
                     'last_record' => [
                         'record_additional_data' => [
                             'GsmSignalLevel' => 0,
-                        ]
-                    ]
-                ]
+                        ],
+                    ],
+                ],
             ],
             [
                 null,
                 [
                     'last_record' => [
-                        'record_additional_data' => []
-                    ]
-                ]
+                        'record_additional_data' => [],
+                    ],
+                ],
             ],
             [
                 null,
-                []
+                [],
             ],
             [
                 null,
-                null
+                null,
             ],
         ];
     }

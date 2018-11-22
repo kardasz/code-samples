@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Tests\Service\Map\ObjectDetails\Visitor;
 
 use DateTime;
@@ -14,17 +14,17 @@ use Kardasz\Service\Map\ObjectDetails\Visitor\Workstop;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class WorkStopTest
- * @package Kardasz\Tests\Service\Map\ObjectDetails\Visitor
+ * Class WorkStopTest.
  */
 class WorkStopTest extends TestCase
 {
     /**
      * @dataProvider dataProvider
-     * @covers       Workstop::visit
+     * @covers       \Workstop::visit
      *
      * @param DateTime|null $expected
-     * @param array|null $data
+     * @param array|null    $data
+     *
      * @throws Exception
      */
     public function testVisit(?DateTime $expected, ?array $data = null)
@@ -39,6 +39,7 @@ class WorkStopTest extends TestCase
 
     /**
      * @return array
+     *
      * @throws Exception
      */
     public function dataProvider(): array
@@ -48,23 +49,23 @@ class WorkStopTest extends TestCase
                 new DateTime('2018-10-12 08:15:00'),
                 [
                     'summary' => [
-                        'workstop' => strtotime('2018-10-12 08:15:00')
-                    ]
-                ]
+                        'workstop' => strtotime('2018-10-12 08:15:00'),
+                    ],
+                ],
             ],
             [
                 new DateTime('2018-03-01 11:45:11'),
                 [
                     'summary' => [
-                        'workstop' => strtotime('2018-03-01 11:45:11')
-                    ]
-                ]
+                        'workstop' => strtotime('2018-03-01 11:45:11'),
+                    ],
+                ],
             ],
             [
                 null,
                 [
-                    'summary' => []
-                ]
+                    'summary' => [],
+                ],
             ],
         ];
     }

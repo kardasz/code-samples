@@ -1,18 +1,17 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\AMQP\Serializer;
 
 use Exception;
 use Kardasz\AMQP\Message\MessageInterface;
 
 /**
- * Class SerializerException
- * @package Kardasz\AMQP\Serializer
+ * Class SerializerException.
  */
 class SerializerException extends Exception
 {

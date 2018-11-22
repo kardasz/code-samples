@@ -1,15 +1,14 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\VO;
 
 /**
- * Class FillingVO
- * @package Kardasz\VO
+ * Class FillingVO.
  */
 class AcVO
 {
@@ -32,8 +31,9 @@ class AcVO
 
     /**
      * AcVO constructor.
+     *
      * @param null|string $name
-     * @param float|null $value
+     * @param float|null  $value
      * @param null|string $type
      * @param null|string $unit
      */
@@ -79,9 +79,10 @@ class AcVO
 
     /**
      * @param null|string $type
+     *
      * @return null|string
      */
-    private function getUnitByType(?string $type) : ?string
+    private function getUnitByType(?string $type): ?string
     {
         switch ($type) {
             case self::TYPE_ANALOG:

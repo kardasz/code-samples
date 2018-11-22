@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Validator;
 
 use Kardasz\Entity\IndividualReport;
@@ -13,8 +13,7 @@ use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 
 /**
- * Class UniqueIndividualReportNameValidator
- * @package Kardasz\Validator
+ * Class UniqueIndividualReportNameValidator.
  */
 class UniqueIndividualReportNameValidator extends ConstraintValidator
 {
@@ -25,6 +24,7 @@ class UniqueIndividualReportNameValidator extends ConstraintValidator
 
     /**
      * UniqueIndividualReportNameValidator constructor.
+     *
      * @param RegistryInterface $doctrine
      */
     public function __construct(RegistryInterface $doctrine)
@@ -33,13 +33,13 @@ class UniqueIndividualReportNameValidator extends ConstraintValidator
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function validate($value, Constraint $constraint)
     {
         $repository = $this->doctrine->getRepository(IndividualReport::class);
         if ($report = $repository->findBy(['name' => $value])) {
-            if (empty($constraint->excludeId) || (string)$report->getId() == (string)$constraint->excludeId) {
+            if (empty($constraint->excludeId) || (string) $report->getId() == (string) $constraint->excludeId) {
                 $this->context->buildViolation($constraint->message)
                     ->setParameter('{{ name }}', $value)
                     ->addViolation();

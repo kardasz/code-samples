@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
@@ -13,8 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 use DateTime;
 
 /**
- * Class ReportCategory
- * @package Kardasz\Entity
+ * Class ReportCategory.
  *
  * @ORM\Table(name="report_category")
  * @ORM\Entity
@@ -144,7 +143,7 @@ class ReportCategory
     /**
      * @return null|string
      */
-    public function getStatus(): ? string
+    public function getStatus(): ?string
     {
         return $this->status;
     }

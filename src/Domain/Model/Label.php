@@ -1,18 +1,18 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Domain\Model;
 
 use Serializable;
 use JsonSerializable;
 
 /**
- * Class Label
- * @package Kardasz\Domain\Model
+ * Class Label.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  */
 class Label implements Serializable, JsonSerializable
@@ -29,6 +29,7 @@ class Label implements Serializable, JsonSerializable
 
     /**
      * Label constructor.
+     *
      * @param string $name
      * @param string $value
      */
@@ -55,7 +56,7 @@ class Label implements Serializable, JsonSerializable
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function serialize()
     {
@@ -64,9 +65,10 @@ class Label implements Serializable, JsonSerializable
 
     /**
      * @param array $data
+     *
      * @return Label
      */
-    public static function deserialize(array $data) : ? Label
+    public static function deserialize(array $data): ?Label
     {
         if (isset($data['name'], $data['value'])) {
             return new self((string) $data['name'], (string) $data['value']);
@@ -74,7 +76,7 @@ class Label implements Serializable, JsonSerializable
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function unserialize($serialized)
     {
@@ -86,13 +88,13 @@ class Label implements Serializable, JsonSerializable
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function jsonSerialize()
     {
         return [
             'name' => $this->getName(),
-            'value' => $this->getValue()
+            'value' => $this->getValue(),
         ];
     }
 }

@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\DTO;
 
 use DateTime;
@@ -12,8 +12,7 @@ use Kardasz\VO\AcVO;
 use Kardasz\VO\FillingVO;
 
 /**
- * Class MapObjectDetailsDTO
- * @package Kardasz\DTO
+ * Class MapObjectDetailsDTO.
  */
 class MapObjectDetailsDTO
 {
@@ -64,12 +63,13 @@ class MapObjectDetailsDTO
 
     /**
      * MapObjectDetailsDTO constructor.
+     *
      * @param array $data
      */
     public function __construct(array $data = [])
     {
         foreach ($data as $k => $v) {
-            $method = 'set' . ucfirst($k);
+            $method = 'set'.ucfirst($k);
             if (method_exists($this, $method)) {
                 call_user_func_array([$this, $method], [$v]);
             }
@@ -217,7 +217,7 @@ class MapObjectDetailsDTO
      */
     public function getDriveHours(): float
     {
-        return floor($this->driveTime/3600);
+        return floor($this->driveTime / 3600);
     }
 
     /**
@@ -225,8 +225,9 @@ class MapObjectDetailsDTO
      */
     public function getDriveMinutes(): float
     {
-        return floor($this->driveTime%3600/60);
+        return floor($this->driveTime % 3600 / 60);
     }
+
     /**
      * @param int|null $driveTime
      */
@@ -248,7 +249,7 @@ class MapObjectDetailsDTO
      */
     public function getParkHours(): float
     {
-        return floor($this->parkTime/3600);
+        return floor($this->parkTime / 3600);
     }
 
     /**
@@ -256,7 +257,7 @@ class MapObjectDetailsDTO
      */
     public function getParkMinutes(): float
     {
-        return floor($this->parkTime%3600/60);
+        return floor($this->parkTime % 3600 / 60);
     }
 
     /**
@@ -280,7 +281,7 @@ class MapObjectDetailsDTO
      */
     public function getParkStopHours(): float
     {
-        return floor($this->parkStopTime/3600);
+        return floor($this->parkStopTime / 3600);
     }
 
     /**
@@ -288,7 +289,7 @@ class MapObjectDetailsDTO
      */
     public function getParkStopMinutes(): float
     {
-        return floor($this->parkStopTime%3600/60);
+        return floor($this->parkStopTime % 3600 / 60);
     }
 
     /**
@@ -312,7 +313,7 @@ class MapObjectDetailsDTO
      */
     public function getParkTime300Hours(): float
     {
-        return floor($this->parkTime300/3600);
+        return floor($this->parkTime300 / 3600);
     }
 
     /**
@@ -320,7 +321,7 @@ class MapObjectDetailsDTO
      */
     public function getParkTime300Minutes(): float
     {
-        return floor($this->parkTime300%3600/60);
+        return floor($this->parkTime300 % 3600 / 60);
     }
 
     /**

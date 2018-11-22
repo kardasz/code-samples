@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Tests\Swiftmailer;
 
 use Kardasz\Swiftmailer\Transport\SendGridTransport;
@@ -16,13 +16,13 @@ use Swift_Events_SimpleEventDispatcher;
 use Swift_Message;
 
 /**
- * Class SendGridTransportTest
- * @package Kardasz\Tests\Swiftmailer
+ * Class SendGridTransportTest.
  */
 class SendGridTransportTest extends TestCase
 {
     /**
      * @test
+     *
      * @throws \Kardasz\Swiftmailer\Transport\SendGridTransportException
      * @throws \Swift_DependencyException
      */

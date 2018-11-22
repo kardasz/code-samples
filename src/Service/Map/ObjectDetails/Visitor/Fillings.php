@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Service\Map\ObjectDetails\Visitor;
 
 use DateTime;
@@ -12,8 +12,7 @@ use Kardasz\DTO\MapObjectDetailsDTO;
 use Kardasz\VO\FillingVO;
 
 /**
- * Class Fillings
- * @package Kardasz\Service\Map\ObjectDetails\Visitor
+ * Class Fillings.
  */
 class Fillings implements VisitorInterface
 {
@@ -40,9 +39,9 @@ class Fillings implements VisitorInterface
         return array_map(
             function ($filling) {
                 return new FillingVO(
-                    new DateTime('@' . $filling['filling_timestamp']),
-                    (float)$filling['filling_value'],
-                    (float)$filling['filling_distance']
+                    new DateTime('@'.$filling['filling_timestamp']),
+                    (float) $filling['filling_value'],
+                    (float) $filling['filling_distance']
                 );
             },
             $fillings

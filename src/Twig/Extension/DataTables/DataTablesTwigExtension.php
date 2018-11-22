@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Twig\Extension\DataTables;
 
 use Symfony\Component\HttpFoundation\Request;
@@ -13,8 +13,7 @@ use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
 /**
- * Class DataTablesTwigExtension
- * @package Kardasz\Twig\Extension\DataTables
+ * Class DataTablesTwigExtension.
  */
 class DataTablesTwigExtension extends AbstractExtension
 {
@@ -25,6 +24,7 @@ class DataTablesTwigExtension extends AbstractExtension
 
     /**
      * OrderLinkExtension constructor.
+     *
      * @param RouterInterface $router
      */
     public function __construct(RouterInterface $router)
@@ -47,7 +47,8 @@ class DataTablesTwigExtension extends AbstractExtension
     /**
      * @param $field
      * @param Request|null $request
-     * @param null $_route
+     * @param null         $_route
+     *
      * @return string
      */
     public function title($title, $field, Request $request = null, $_route = null)
@@ -61,7 +62,8 @@ class DataTablesTwigExtension extends AbstractExtension
     /**
      * @param $field
      * @param Request|null $request
-     * @param null $_route
+     * @param null         $_route
+     *
      * @return string
      */
     public function order($field, Request $request = null, $_route = null)
@@ -75,7 +77,7 @@ class DataTablesTwigExtension extends AbstractExtension
                 if (is_object($value) && method_exists($value, 'getId')) {
                     $value = $value->getId();
                 }
-                $params[$name] = (string)$value;
+                $params[$name] = (string) $value;
             }
         }
 
@@ -96,6 +98,7 @@ class DataTablesTwigExtension extends AbstractExtension
     /**
      * @param $field
      * @param Request|null $request
+     *
      * @return string
      */
     public function icon($field, Request $request = null)
@@ -106,6 +109,7 @@ class DataTablesTwigExtension extends AbstractExtension
         $params = $request->query->all();
         if (isset($params['_sort']) && $params['_sort'] == $field) {
             $dir = (isset($params['_dir']) && $params['_dir'] == 'desc') ? 'desc' : 'asc';
+
             return sprintf(' <span class="fa fa-sort-alpha-%s" aria-hidden="true"></span>', $dir);
         }
     }

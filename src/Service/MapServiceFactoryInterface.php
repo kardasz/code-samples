@@ -1,23 +1,23 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Service;
 
 use Psr\Container\ContainerInterface;
 
 /**
- * Interface MapServiceFactoryInterface
- * @package Kardasz\Service
+ * Interface MapServiceFactoryInterface.
  */
 interface MapServiceFactoryInterface
 {
     /**
      * @param ContainerInterface $container
+     *
      * @return MapService
      */
-    public function create(ContainerInterface $container) : MapService;
+    public function create(ContainerInterface $container): MapService;
 }

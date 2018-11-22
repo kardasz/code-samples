@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Tests\Service\Map\ObjectSummary\Visitor;
 
 use Kardasz\DTO\MapObjectSummaryDTO;
@@ -12,14 +12,13 @@ use Kardasz\Service\Map\ObjectSummary\Visitor\Description;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class DescriptionTest
- * @package Kardasz\Tests\Service\Map\ObjectSummary\Visitor
+ * Class DescriptionTest.
  */
 class DescriptionTest extends TestCase
 {
     /**
      * @dataProvider dataProvider
-     * @covers       Description::visit
+     * @covers       \Description::visit
      *
      * @param string|null $expected
      * @param array|null  $data
@@ -42,28 +41,28 @@ class DescriptionTest extends TestCase
             [
                 'Skoda Octavia, 1, 2009',
                 [
-                    'object_description' => 'Skoda Octavia, 1, 2009'
-                ]
+                    'object_description' => 'Skoda Octavia, 1, 2009',
+                ],
             ],
             [
                 'Skoda Rapid, 3, 2018',
                 [
-                    'object_description' => 'Skoda Rapid, 3, 2018'
-                ]
+                    'object_description' => 'Skoda Rapid, 3, 2018',
+                ],
             ],
             [
                 null,
                 [
-                    'object_description' => null
-                ]
+                    'object_description' => null,
+                ],
             ],
             [
                 null,
-                []
+                [],
             ],
             [
                 null,
-                null
+                null,
             ],
         ];
     }

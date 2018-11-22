@@ -1,28 +1,27 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Validator;
 
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 
 /**
- * Class DateGreaterThanValidator
- * @package Kardasz\Validator
+ * Class DateGreaterThanValidator.
  */
 class DateGreaterThanValidator extends ConstraintValidator
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function validate($value, Constraint $constraint)
     {
         if (empty($value)) {
-            return ;
+            return;
         }
 
         $field = $constraint->field;
@@ -33,7 +32,8 @@ class DateGreaterThanValidator extends ConstraintValidator
             if (empty($value2) || new \DateTime($value2) >= new \DateTime($value)) {
                 $this->context->buildViolation($constraint->message)
                     ->addViolation();
-                return ;
+
+                return;
             }
         }
     }

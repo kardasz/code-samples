@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Tests\Service\Map\ObjectDetails\Visitor;
 
 use Kardasz\DTO\MapObjectDetailsDTO;
@@ -12,14 +12,13 @@ use Kardasz\Service\Map\ObjectDetails\Visitor\DriveTime;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class DriveTimeTest
- * @package Kardasz\Tests\Service\Map\ObjectDetails\Visitor
+ * Class DriveTimeTest.
  */
 class DriveTimeTest extends TestCase
 {
     /**
      * @dataProvider dataProvider
-     * @covers       DriveTime::visit
+     * @covers       \DriveTime::visit
      *
      * @param int|null   $expected
      * @param array|null $data
@@ -44,25 +43,24 @@ class DriveTimeTest extends TestCase
                 3600,
                 [
                     'summary' => [
-                        'drivetime' => 3600
-                    ]
-                ]
+                        'drivetime' => 3600,
+                    ],
+                ],
             ],
             [
                 3345,
                 [
                     'summary' => [
-                        'drivetime' => 3345
-                    ]
-                ]
+                        'drivetime' => 3345,
+                    ],
+                ],
             ],
             [
                 null,
                 [
-                    'summary' => []
-                ]
+                    'summary' => [],
+                ],
             ],
-
         ];
     }
 }

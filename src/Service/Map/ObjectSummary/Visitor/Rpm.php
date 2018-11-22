@@ -1,17 +1,16 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Service\Map\ObjectSummary\Visitor;
 
 use Kardasz\DTO\MapObjectSummaryDTO;
 
 /**
- * Class Rpm
- * @package Kardasz\Service\Map\ObjectSummary\Visitor
+ * Class Rpm.
  */
 class Rpm implements VisitorInterface
 {
@@ -21,6 +20,6 @@ class Rpm implements VisitorInterface
      */
     public function visit(MapObjectSummaryDTO $dto, ?array $data = null): void
     {
-        $dto->setRpm((isset($data['last_record']['record_rpm'])) ? (int)$data['last_record']['record_rpm'] : null);
+        $dto->setRpm((isset($data['last_record']['record_rpm'])) ? (int) $data['last_record']['record_rpm'] : null);
     }
 }

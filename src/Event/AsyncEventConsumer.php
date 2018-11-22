@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Event;
 
 use Kardasz\AMQP\Consumer\AbstractMessageConsumer;
@@ -13,8 +13,7 @@ use Kardasz\AMQP\Message\MessageInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
- * Class AsyncEventConsumer
- * @package Kardasz\Event
+ * Class AsyncEventConsumer.
  */
 class AsyncEventConsumer extends AbstractMessageConsumer
 {
@@ -25,8 +24,9 @@ class AsyncEventConsumer extends AbstractMessageConsumer
 
     /**
      * AsyncEventConsumer constructor.
+     *
      * @param AMQPMessageMapperInterface $mapper
-     * @param EventDispatcherInterface $eventDispatcher
+     * @param EventDispatcherInterface   $eventDispatcher
      */
     public function __construct(AMQPMessageMapperInterface $mapper, EventDispatcherInterface $eventDispatcher)
     {
@@ -36,14 +36,17 @@ class AsyncEventConsumer extends AbstractMessageConsumer
 
     /**
      * @param MessageInterface $message
+     *
      * @return bool
      */
     public function consume(MessageInterface $message): bool
     {
         if ($message instanceof AsyncEventInterface) {
             $this->eventDispatcher->dispatch($message->getEventName(), $message->getEvent());
+
             return true;
         }
+
         return false;
     }
 }

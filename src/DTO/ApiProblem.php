@@ -1,17 +1,17 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\DTO;
 
 /**
- * Class ApiProblem
- * @package App\DTO\Api
- * @link https://tools.ietf.org/html/draft-nottingham-http-problem-07
- * @link https://tools.ietf.org/html/rfc7807
+ * Class ApiProblem.
+ *
+ * @see https://tools.ietf.org/html/draft-nottingham-http-problem-07
+ * @see https://tools.ietf.org/html/rfc7807
  */
 class ApiProblem implements \JsonSerializable
 {
@@ -56,14 +56,14 @@ class ApiProblem implements \JsonSerializable
     private $instance;
 
     /**
-     * List errors
+     * List errors.
      *
      * @var array
      */
     private $errors = [];
 
     /**
-     * Additional data
+     * Additional data.
      *
      * @var array
      */
@@ -71,6 +71,7 @@ class ApiProblem implements \JsonSerializable
 
     /**
      * ApiProblem constructor.
+     *
      * @param array $data
      */
     public function __construct(array $data = [])
@@ -223,7 +224,7 @@ class ApiProblem implements \JsonSerializable
             'title' => $this->getTitle(),
             'detail' => $this->getDetail(),
             'instance' => $this->getInstance(),
-            'errors' => $this->getErrors()
+            'errors' => $this->getErrors(),
         ];
 
         return array_merge($base, $this->getExtraData());

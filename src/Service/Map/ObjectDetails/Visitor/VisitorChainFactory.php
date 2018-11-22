@@ -1,17 +1,16 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Service\Map\ObjectDetails\Visitor;
 
 use Psr\Container\ContainerInterface;
 
 /**
- * Class VisitorChainFactory
- * @package Kardasz\Service\Map\ObjectDetails\Visitor
+ * Class VisitorChainFactory.
  */
 class VisitorChainFactory implements VisitorChainFactoryInterface
 {

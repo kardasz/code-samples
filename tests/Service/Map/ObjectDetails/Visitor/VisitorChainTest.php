@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Tests\Service\Map\ObjectDetails\Visitor;
 
 use Kardasz\DTO\MapObjectDetailsDTO;
@@ -14,14 +14,13 @@ use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\MockObject\MockObject;
 
 /**
- * Class VisitorChainTest
- * @package Kardasz\Tests\Service\Map\ObjectDetails\Visitor
+ * Class VisitorChainTest.
  */
 class VisitorChainTest extends TestCase
 {
     /**
-     * @covers VisitorChain::add
-     * @covers VisitorChain::visit
+     * @covers \VisitorChain::add
+     * @covers \VisitorChain::visit
      */
     public function testVisit()
     {

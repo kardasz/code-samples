@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Swiftmailer\Transport;
 
 use SendGrid;
@@ -18,8 +18,8 @@ use Swift_DependencyContainer;
 use Swift_DependencyException;
 
 /**
- * Class SendGridTransport
- * @package Kardasz\Swiftmailer\Transport
+ * Class SendGridTransport.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  */
 class SendGridTransport implements Swift_Transport
@@ -41,8 +41,10 @@ class SendGridTransport implements Swift_Transport
 
     /**
      * SendgridTransport constructor.
-     * @param SendGrid $client
+     *
+     * @param SendGrid                          $client
      * @param null|Swift_Events_EventDispatcher $eventDispatcher
+     *
      * @throws Swift_DependencyException
      */
     public function __construct(SendGrid $client, ?Swift_Events_EventDispatcher $eventDispatcher = null)
@@ -55,7 +57,7 @@ class SendGridTransport implements Swift_Transport
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function isStarted()
     {
@@ -63,7 +65,7 @@ class SendGridTransport implements Swift_Transport
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function start()
     {
@@ -71,7 +73,7 @@ class SendGridTransport implements Swift_Transport
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function stop()
     {
@@ -79,7 +81,7 @@ class SendGridTransport implements Swift_Transport
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function ping()
     {
@@ -87,7 +89,8 @@ class SendGridTransport implements Swift_Transport
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
+     *
      * @throws SendGridTransportException
      */
     public function send(Swift_Mime_SimpleMessage $message, &$failedRecipients = null)
@@ -111,21 +114,21 @@ class SendGridTransport implements Swift_Transport
         if ($to = $message->getTo()) {
             foreach ($to as $address => $name) {
                 $email->addTo($address, $name);
-                $count++;
+                ++$count;
             }
         }
 
         if ($bcc = $message->getBcc()) {
             foreach ($bcc as $address => $name) {
                 $email->addBcc($address, $name);
-                $count++;
+                ++$count;
             }
         }
 
         if ($cc = $message->getCc()) {
             foreach ($cc as $address => $name) {
                 $email->addCc($address, $name);
-                $count++;
+                ++$count;
             }
         }
 
@@ -150,7 +153,7 @@ class SendGridTransport implements Swift_Transport
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function registerPlugin(Swift_Events_EventListener $plugin)
     {
@@ -159,6 +162,7 @@ class SendGridTransport implements Swift_Transport
 
     /**
      * @param SendGridTransportException $e
+     *
      * @throws SendGridTransportException
      */
     private function throwException(SendGridTransportException $e)

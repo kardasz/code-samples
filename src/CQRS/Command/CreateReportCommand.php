@@ -1,18 +1,17 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\CQRS\Command;
 
 use DateTime;
 use Kardasz\Entity\ReportCategory;
 
 /**
- * Class CreateReportCommand
- * @package Kardasz\CQRS\Command
+ * Class CreateReportCommand.
  */
 class CreateReportCommand
 {
@@ -43,11 +42,12 @@ class CreateReportCommand
 
     /**
      * CreateReport constructor.
+     *
      * @param ReportCategory $category
-     * @param string $name
-     * @param string $author
-     * @param string $filepath
-     * @param DateTime $date
+     * @param string         $name
+     * @param string         $author
+     * @param string         $filepath
+     * @param DateTime       $date
      */
     public function __construct(ReportCategory $category, string $name, string $author, string $filepath, DateTime $date)
     {

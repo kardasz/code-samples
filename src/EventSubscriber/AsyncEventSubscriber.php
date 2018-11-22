@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\EventSubscriber;
 
 use Kardasz\AMQP\Publisher\MessagePublisherInterface;
@@ -12,8 +12,7 @@ use Kardasz\Event\AsyncEventWrapper;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
- * Class AsyncEventSubscriber
- * @package Kardasz\EventSubscriber
+ * Class AsyncEventSubscriber.
  */
 class AsyncEventSubscriber implements EventSubscriberInterface
 {
@@ -24,6 +23,7 @@ class AsyncEventSubscriber implements EventSubscriberInterface
 
     /**
      * AsyncEventSubscriber constructor.
+     *
      * @param MessagePublisherInterface $publisher
      */
     public function __construct(MessagePublisherInterface $publisher)
@@ -32,14 +32,14 @@ class AsyncEventSubscriber implements EventSubscriberInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public static function getSubscribedEvents()
     {
         return [
             AsyncEventWrapper::NAME => [
-                ['publish', 10]
-            ]
+                ['publish', 10],
+            ],
         ];
     }
 

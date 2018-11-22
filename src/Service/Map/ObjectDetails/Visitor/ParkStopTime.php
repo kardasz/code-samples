@@ -1,17 +1,16 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Service\Map\ObjectDetails\Visitor;
 
 use Kardasz\DTO\MapObjectDetailsDTO;
 
 /**
- * Class ParkStopTime
- * @package Kardasz\Service\Map\ObjectDetails\Visitor
+ * Class ParkStopTime.
  */
 class ParkStopTime implements VisitorInterface
 {
@@ -22,7 +21,7 @@ class ParkStopTime implements VisitorInterface
     public function visit(MapObjectDetailsDTO $dto, ?array $data = null): void
     {
         if (!empty($data['summary']['parkstop'])) {
-            $dto->setParkStopTime((int)$data['summary']['parkstop']);
+            $dto->setParkStopTime((int) $data['summary']['parkstop']);
         }
     }
 }

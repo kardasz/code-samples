@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Tests\Service\Map\ObjectDetails\Visitor;
 
 use Kardasz\DTO\MapObjectDetailsDTO;
@@ -12,14 +12,13 @@ use Kardasz\Service\Map\ObjectDetails\Visitor\StopGeo;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class StopGeoTest
- * @package Kardasz\Tests\Service\Map\ObjectDetails\Visitor
+ * Class StopGeoTest.
  */
 class StopGeoTest extends TestCase
 {
     /**
      * @dataProvider dataProvider
-     * @covers       StopGeo::visit
+     * @covers       \StopGeo::visit
      *
      * @param float|null $expectedLat
      * @param float|null $expectedLng
@@ -50,9 +49,9 @@ class StopGeoTest extends TestCase
                         'posstop' => [
                             'record_gps_latitude' => 52.321537,
                             'record_gps_longitude' => 16.876883,
-                        ]
-                    ]
-                ]
+                        ],
+                    ],
+                ],
             ],
             [
                 52.521537,
@@ -62,18 +61,18 @@ class StopGeoTest extends TestCase
                         'posstop' => [
                             'record_gps_latitude' => 52.521537,
                             'record_gps_longitude' => 16.416883,
-                        ]
-                    ]
-                ]
+                        ],
+                    ],
+                ],
             ],
             [
                 null,
                 null,
                 [
                     'summary' => [
-                        'posstart' => []
-                    ]
-                ]
+                        'posstart' => [],
+                    ],
+                ],
             ],
         ];
     }

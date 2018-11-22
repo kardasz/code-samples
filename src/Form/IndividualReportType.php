@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Form;
 
 use Doctrine\ORM\EntityRepository;
@@ -19,13 +19,12 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Class IndividualReportType
- * @package Kardasz\Form
+ * Class IndividualReportType.
  */
 class IndividualReportType extends AbstractType
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -51,7 +50,7 @@ class IndividualReportType extends AbstractType
                 'constraints' => array(
                     new Assert\NotBlank(),
                     new Assert\Length(['min' => 8]),
-                    new UniqueIndividualReportName()
+                    new UniqueIndividualReportName(),
                 ),
             ])
             ->add('author', TextType::class, [
@@ -69,7 +68,7 @@ class IndividualReportType extends AbstractType
                     new Assert\NotBlank(),
                     new Assert\File([
                         'maxSize' => '10M',
-                        'mimeTypes' => ['application/pdf', '	application/msword']
+                        'mimeTypes' => ['application/pdf', '	application/msword'],
                     ]),
                 ),
             ])
@@ -85,12 +84,12 @@ class IndividualReportType extends AbstractType
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => null
+            'data_class' => null,
         ]);
     }
 }

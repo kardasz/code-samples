@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\AMQP\Serializer;
 
 use Kardasz\AMQP\Message\MessageInterface;
@@ -12,26 +12,28 @@ use ReflectionClass;
 use ReflectionException;
 
 /**
- * Class MessageSerializer
- * @package Kardasz\AMQP\Serializer
+ * Class MessageSerializer.
  */
 class MessageSerializer implements MessageSerializerInterface
 {
     /**
      * @param MessageInterface $message
+     *
      * @return string
      */
     public function serialize(MessageInterface $message): string
     {
         return json_encode([
             '__class' => get_class($message),
-            '__data'  => $message->serialize()
+            '__data' => $message->serialize(),
         ]);
     }
 
     /**
      * @param string $data
+     *
      * @return MessageInterface|null
+     *
      * @throws SerializerException
      * @throws ReflectionException
      */

@@ -1,22 +1,21 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\AMQP\Publisher;
 
 use Kardasz\AMQP\Message\MessageInterface;
 
 /**
- * Interface MessagePublisherInterface
- * @package Kardasz\AMQP\Publisher
+ * Interface MessagePublisherInterface.
  */
 interface MessagePublisherInterface
 {
     /**
      * @param MessageInterface $message
      */
-    public function publish(MessageInterface $message) : void;
+    public function publish(MessageInterface $message): void;
 }

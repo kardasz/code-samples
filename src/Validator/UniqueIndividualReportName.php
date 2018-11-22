@@ -1,17 +1,17 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Validator;
 
 use Symfony\Component\Validator\Constraint;
 
 /**
- * Class UniqueIndividualReportName
- * @package Kardasz\Validator
+ * Class UniqueIndividualReportName.
+ *
  * @Annotation
  */
 class UniqueIndividualReportName extends Constraint
@@ -27,7 +27,7 @@ class UniqueIndividualReportName extends Constraint
     public $excludeId;
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function validatedBy()
     {

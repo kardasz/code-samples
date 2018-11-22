@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Tests\Service\Map;
 
 use DateTimeZone;
@@ -20,8 +20,7 @@ use Kardasz\VO\AcVO;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class MapServiceTest
- * @package Kardasz\Tests\Service\Map
+ * Class MapServiceTest.
  */
 class MapServiceTest extends TestCase
 {
@@ -34,7 +33,7 @@ class MapServiceTest extends TestCase
     }
 
     /**
-     * @covers MapService::getObjectDetails
+     * @covers \MapService::getObjectDetails
      */
     public function testGetObjectDetails()
     {
@@ -57,29 +56,29 @@ class MapServiceTest extends TestCase
                     'record_gps_latitude' => 52.711537,
                     'record_gps_longitude' => 16.928883,
                 ],
-                'drivetime' => (2*3600) + (15 * 60) + 25,
-                'parktime' => (3*3600) + (45 * 60),
-                'parktime_300' => (4*3600) + (5 * 60) + 21,
-                'parktime_300_count' => 3
+                'drivetime' => (2 * 3600) + (15 * 60) + 25,
+                'parktime' => (3 * 3600) + (45 * 60),
+                'parktime_300' => (4 * 3600) + (5 * 60) + 21,
+                'parktime_300_count' => 3,
             ],
             'fillings' => [
                 [
                     'filling_timestamp' => strtotime('2018-10-01 08:15:00'),
                     'filling_value' => 42,
-                    'filling_distance' => 620
-                ]
+                    'filling_distance' => 620,
+                ],
             ],
             'lastrec' => [
                 'record_io' => [
                     'analog' => [
                         [2, 'foo'],
-                        [3, 'baaz']
+                        [3, 'baaz'],
                     ],
                     'temp' => [
-                        [45, 'bar']
-                    ]
-                ]
-            ]
+                        [45, 'bar'],
+                    ],
+                ],
+            ],
         ]);
 
         $this->assertEquals(300, $results->getDistance());
@@ -115,7 +114,7 @@ class MapServiceTest extends TestCase
     }
 
     /**
-     * @covers MapService::getObjectSummary
+     * @covers \MapService::getObjectSummary
      */
     public function testGetObjectSummary()
     {
@@ -139,9 +138,9 @@ class MapServiceTest extends TestCase
                 'driver_user_id' => 5,
                 'record_additional_data' => [
                     'SensorAcc' => 14,
-                    'GsmSignalLevel' => 32
-                ]
-            ]
+                    'GsmSignalLevel' => 32,
+                ],
+            ],
         ]);
 
         $this->assertEquals(1, $results->getId());
@@ -160,7 +159,7 @@ class MapServiceTest extends TestCase
     /**
      * @return MockObject|ObjectDetailsVisitorChainInterface
      */
-    private function getObjectDetailsVisitorChainMock() : ObjectDetailsVisitorChainInterface
+    private function getObjectDetailsVisitorChainMock(): ObjectDetailsVisitorChainInterface
     {
         return $this->getMockBuilder(ObjectDetailsVisitorChainInterface::class)
             ->disableOriginalConstructor()
@@ -170,7 +169,7 @@ class MapServiceTest extends TestCase
     /**
      * @return ObjectDetailsVisitorChainInterface
      */
-    private function newObjectDetailsVisitorChain() : ObjectDetailsVisitorChainInterface
+    private function newObjectDetailsVisitorChain(): ObjectDetailsVisitorChainInterface
     {
         $chain = new ObjectDetailsVisitorChain();
         $chain->add(new ObjectDetailsVisitor\Ac());
@@ -193,7 +192,7 @@ class MapServiceTest extends TestCase
     /**
      * @return MockObject|ObjectSummaryVisitorChainInterface
      */
-    private function getObjectSummaryVisitorChainMock() : ObjectSummaryVisitorChainInterface
+    private function getObjectSummaryVisitorChainMock(): ObjectSummaryVisitorChainInterface
     {
         return $this->getMockBuilder(ObjectSummaryVisitorChainInterface::class)
             ->disableOriginalConstructor()
@@ -203,7 +202,7 @@ class MapServiceTest extends TestCase
     /**
      * @return ObjectSummaryVisitorChainInterface
      */
-    private function newObjectSummaryVisitorChain() : ObjectSummaryVisitorChainInterface
+    private function newObjectSummaryVisitorChain(): ObjectSummaryVisitorChainInterface
     {
         $chain = new ObjectSummaryVisitorChain();
         $chain->add(new ObjectSummaryVisitor\Acc());

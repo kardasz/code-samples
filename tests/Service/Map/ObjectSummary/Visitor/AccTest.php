@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Tests\Service\Map\ObjectSummary\Visitor;
 
 use Kardasz\DTO\MapObjectSummaryDTO;
@@ -12,14 +12,13 @@ use Kardasz\Service\Map\ObjectSummary\Visitor\Acc;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class AccTest
- * @package Kardasz\Tests\Service\Map\ObjectSummary\Visitor
+ * Class AccTest.
  */
 class AccTest extends TestCase
 {
     /**
      * @dataProvider dataProvider
-     * @covers       Acc::visit
+     * @covers       \Acc::visit
      *
      * @param string|null $expected
      * @param array|null  $data
@@ -44,28 +43,28 @@ class AccTest extends TestCase
                 [
                     'last_record' => [
                         'record_additional_data' => [
-                            'SensorAcc' => '123.112'
-                        ]
-                    ]
-                ]
+                            'SensorAcc' => '123.112',
+                        ],
+                    ],
+                ],
             ],
             [
                 '4123.11 foo',
                 [
                     'last_record' => [
                         'record_additional_data' => [
-                            'SensorAcc' => '4123.11 foo'
-                        ]
-                    ]
-                ]
+                            'SensorAcc' => '4123.11 foo',
+                        ],
+                    ],
+                ],
             ],
             [
                 null,
                 [
                     'last_record' => [
-                        'record_additional_data' => []
-                    ]
-                ]
+                        'record_additional_data' => [],
+                    ],
+                ],
             ],
         ];
     }

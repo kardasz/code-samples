@@ -1,6 +1,7 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
@@ -11,8 +12,8 @@ use Doctrine\DBAL\Types\Type;
 use Kardasz\Domain\Model\Label;
 
 /**
- * Class LabelCollectionDoctrineType
- * @package Kardasz\Doctrine\Type
+ * Class LabelCollectionDoctrineType.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  */
 class LabelCollectionDoctrineType extends Type

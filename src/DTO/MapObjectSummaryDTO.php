@@ -1,15 +1,14 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\DTO;
 
 /**
- * Class MapObjectSummaryDTO
- * @package Kardasz\DTO
+ * Class MapObjectSummaryDTO.
  */
 class MapObjectSummaryDTO
 {
@@ -75,12 +74,13 @@ class MapObjectSummaryDTO
 
     /**
      * MapObjectSummaryDTO constructor.
+     *
      * @param array $data
      */
     public function __construct(array $data = [])
     {
         foreach ($data as $k => $v) {
-            $method = 'set' . ucfirst($k);
+            $method = 'set'.ucfirst($k);
             if (method_exists($this, $method)) {
                 call_user_func_array([$this, $method], [$v]);
             }

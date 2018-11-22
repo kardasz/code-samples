@@ -1,17 +1,16 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Event;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
- * Class AsyncEventDispatcher
- * @package Kardasz\Event
+ * Class AsyncEventDispatcher.
  */
 class AsyncEventDispatcher implements AsyncEventDispatcherInterface
 {
@@ -22,6 +21,7 @@ class AsyncEventDispatcher implements AsyncEventDispatcherInterface
 
     /**
      * AsyncEventDispatcher constructor.
+     *
      * @param EventDispatcherInterface $eventDispatcher
      */
     public function __construct(EventDispatcherInterface $eventDispatcher)
@@ -31,9 +31,10 @@ class AsyncEventDispatcher implements AsyncEventDispatcherInterface
 
     /**
      * @param AsyncEventInterface $event
+     *
      * @return mixed
      */
-    public function dispatch(AsyncEventInterface $event) : void
+    public function dispatch(AsyncEventInterface $event): void
     {
         $this->eventDispatcher->dispatch(AsyncEventWrapper::NAME, new AsyncEventWrapper($event));
     }

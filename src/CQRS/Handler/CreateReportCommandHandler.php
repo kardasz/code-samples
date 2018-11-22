@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\CQRS\Handler;
 
 use Broadway\CommandHandling\SimpleCommandHandler;
@@ -13,8 +13,7 @@ use Kardasz\Entity\IndividualReport;
 use Kardasz\Service\IndividualReportService;
 
 /**
- * Class CreateReportCommandHandler
- * @package Kardasz\CQRS\Handler
+ * Class CreateReportCommandHandler.
  */
 class CreateReportCommandHandler extends SimpleCommandHandler
 {
@@ -25,6 +24,7 @@ class CreateReportCommandHandler extends SimpleCommandHandler
 
     /**
      * CreateReportCommandHandler constructor.
+     *
      * @param IndividualReportService $reportService
      */
     public function __construct(IndividualReportService $reportService)

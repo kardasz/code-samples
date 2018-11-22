@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Tests\Service\Map\ObjectDetails\Visitor;
 
 use Kardasz\DTO\MapObjectDetailsDTO;
@@ -12,14 +12,13 @@ use Kardasz\Service\Map\ObjectDetails\Visitor\Distance;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class DistanceTest
- * @package Kardasz\Tests\Service\Map\ObjectDetails\Visitor
+ * Class DistanceTest.
  */
 class DistanceTest extends TestCase
 {
     /**
      * @dataProvider dataProvider
-     * @covers       Distance::visit
+     * @covers       \Distance::visit
      *
      * @param float      $expected
      * @param array|null $data
@@ -44,19 +43,18 @@ class DistanceTest extends TestCase
                 123.55,
                 [
                     'summary' => [
-                        'distance' => 123.55
-                    ]
-                ]
+                        'distance' => 123.55,
+                    ],
+                ],
             ],
             [
                 542.23,
                 [
                     'summary' => [
-                        'distance' => 542.23
-                    ]
-                ]
+                        'distance' => 542.23,
+                    ],
+                ],
             ],
-
         ];
     }
 }

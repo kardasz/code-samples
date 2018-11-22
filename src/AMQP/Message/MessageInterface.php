@@ -1,26 +1,26 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\AMQP\Message;
 
 /**
- * Interface MessageInterface
- * @package Kardasz\AMQP\Message
+ * Interface MessageInterface.
  */
 interface MessageInterface
 {
     /**
      * @return array
      */
-    public function serialize() : array;
+    public function serialize(): array;
 
     /**
      * @param array $data
+     *
      * @return MessageInterface
      */
-    public static function deserialize(array $data) : MessageInterface;
+    public static function deserialize(array $data): MessageInterface;
 }

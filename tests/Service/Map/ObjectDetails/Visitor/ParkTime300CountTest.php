@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Tests\Service\Map\ObjectDetails\Visitor;
 
 use Kardasz\DTO\MapObjectDetailsDTO;
@@ -12,14 +12,13 @@ use Kardasz\Service\Map\ObjectDetails\Visitor\ParkTime300Count;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class ParkTime300CountTest
- * @package Kardasz\Tests\Service\Map\ObjectDetails\Visitor
+ * Class ParkTime300CountTest.
  */
 class ParkTime300CountTest extends TestCase
 {
     /**
      * @dataProvider dataProvider
-     * @covers       ParkTime300Count::visit
+     * @covers       \ParkTime300Count::visit
      *
      * @param int|null   $expected
      * @param array|null $data
@@ -44,35 +43,34 @@ class ParkTime300CountTest extends TestCase
                 6,
                 [
                     'summary' => [
-                        'parktime_300_count' => 6
-                    ]
-                ]
+                        'parktime_300_count' => 6,
+                    ],
+                ],
             ],
             [
                 2,
                 [
                     'summary' => [
-                        'parktime_300_count' => 2
-                    ]
-                ]
+                        'parktime_300_count' => 2,
+                    ],
+                ],
             ],
             [
                 null,
                 [
                     'summary' => [
-                        'parktime_300_count' => null
-                    ]
-                ]
+                        'parktime_300_count' => null,
+                    ],
+                ],
             ],
             [
                 0,
                 [
                     'summary' => [
-                        'parktime_300_count' => 'xyz'
-                    ]
-                ]
+                        'parktime_300_count' => 'xyz',
+                    ],
+                ],
             ],
-
         ];
     }
 }

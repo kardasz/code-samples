@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Tests\Service\Map\ObjectDetails\Visitor;
 
 use Kardasz\Service\Map\ObjectDetails\Visitor\VisitorChainFactoryInterface;
@@ -30,13 +30,12 @@ use PHPUnit\Framework\MockObject\MockObject;
 use ReflectionClass;
 
 /**
- * Class VisitorChainFactoryTest
- * @package Kardasz\Tests\Service\Map\ObjectDetails\Visitor
+ * Class VisitorChainFactoryTest.
  */
 class VisitorChainFactoryTest extends TestCase
 {
     /**
-     * @covers VisitorChainFactory::create
+     * @covers \VisitorChainFactory::create
      */
     public function testVisitors()
     {
@@ -70,7 +69,7 @@ class VisitorChainFactoryTest extends TestCase
     }
 
     /**
-     * @covers VisitorChainFactory::create
+     * @covers \VisitorChainFactory::create
      */
     public function testInvoke()
     {

@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Service;
 
 use Kardasz\Entity\IndividualReport;
@@ -13,8 +13,7 @@ use Kardasz\Event\IndividualReportCreatedEvent;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * Class IndividualReportService
- * @package Kardasz\Service
+ * Class IndividualReportService.
  */
 class IndividualReportService
 {
@@ -30,8 +29,9 @@ class IndividualReportService
 
     /**
      * IndividualReportService constructor.
+     *
      * @param AsyncEventDispatcherInterface $eventDispatcher
-     * @param RegistryInterface $registry
+     * @param RegistryInterface             $registry
      */
     public function __construct(
         AsyncEventDispatcherInterface $eventDispatcher,
@@ -48,6 +48,6 @@ class IndividualReportService
     {
         $this->registry->getManager()->persist($entity);
         $this->registry->getManager()->flush();
-        $this->eventDispatcher->dispatch(new IndividualReportCreatedEvent((string)$entity->getId()));
+        $this->eventDispatcher->dispatch(new IndividualReportCreatedEvent((string) $entity->getId()));
     }
 }

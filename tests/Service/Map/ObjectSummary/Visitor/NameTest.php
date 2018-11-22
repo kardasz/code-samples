@@ -1,10 +1,10 @@
 <?php
 /**
- * Code Samples
+ * Code Samples.
+ *
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-
 namespace Kardasz\Tests\Service\Map\ObjectSummary\Visitor;
 
 use Kardasz\DTO\MapObjectSummaryDTO;
@@ -12,14 +12,13 @@ use Kardasz\Service\Map\ObjectSummary\Visitor\Name;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Class NameTest
- * @package Kardasz\Tests\Service\Map\ObjectSummary\Visitor
+ * Class NameTest.
  */
 class NameTest extends TestCase
 {
     /**
      * @dataProvider dataProvider
-     * @covers       Name::visit
+     * @covers       \Name::visit
      *
      * @param string|null $expected
      * @param array|null  $data
@@ -42,28 +41,28 @@ class NameTest extends TestCase
             [
                 'WU13523',
                 [
-                    'object_name' => 'WU13523'
-                ]
+                    'object_name' => 'WU13523',
+                ],
             ],
             [
                 'DW13523',
                 [
-                    'object_name' => 'DW13523'
-                ]
+                    'object_name' => 'DW13523',
+                ],
             ],
             [
                 null,
                 [
-                    'object_name' => null
-                ]
+                    'object_name' => null,
+                ],
             ],
             [
                 null,
-                []
+                [],
             ],
             [
                 null,
-                null
+                null,
             ],
         ];
     }
