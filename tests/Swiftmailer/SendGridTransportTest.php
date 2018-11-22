@@ -5,7 +5,7 @@
  * @license MIT
  */
 
-namespace Kardasz\Swiftmailer\Tests;
+namespace Kardasz\Tests\Swiftmailer;
 
 use Kardasz\Swiftmailer\Transport\SendGridTransport;
 use PHPUnit\Framework\TestCase;
@@ -17,7 +17,7 @@ use Swift_Message;
 
 /**
  * Class SendGridTransportTest
- * @package Kardasz\Swiftmailer\Tests
+ * @package Kardasz\Tests\Swiftmailer
  */
 class SendGridTransportTest extends TestCase
 {

@@ -4,16 +4,17 @@
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  * @license MIT
  */
-namespace Kardasz\Doctrine\Type;
+namespace Kardasz\Tests\Doctrine\Type;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
+use Kardasz\Doctrine\Type\LabelCollectionDoctrineType;
 use Kardasz\Domain\Model\Label;
 use PHPUnit\Framework\TestCase;
 use Doctrine\DBAL\Types\Type;
 
 /**
  * Class LabelCollectionDoctrineTypeTest
- * @package Kardasz\Doctrine\Type
+ * @package Kardasz\Tests\Doctrine\Type
  * @author Krzysztof Kardasz <krzysztof@kardasz.eu>
  */
 class LabelCollectionDoctrineTypeTest extends TestCase
